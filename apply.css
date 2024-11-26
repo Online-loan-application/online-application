@@ -35,7 +35,9 @@ label {
 input[type='text'], 
 input[type='number'],
 input[type='email'],
-input[type='password']{
+input[type='date'],
+input[type='password'],
+#accountDetails{
     width: 98%;
     outline: none;
     padding: 4%;
@@ -68,39 +70,8 @@ input[type='password']{
     margin-top: 8%;
     font-size: 110%;
 }
-
-#second-form{
-    margin-top: 15%;
-    background-color: white;
-
-}
-#second-form > p{
-    font-size: 130%;
-    border: 2px solid black; 
-    width: 70%; 
-    text-align: center;
-    padding: 3%;
-    border-radius: 25px;
-    margin-top: -10%;
-    /* margin-bottom: 4%; */
-}
-#second-form > div{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap:   wrap;
-    margin-left: -120%;
-    width: 90vw;
-    transition-duration: 2s;
-    margin-top: -5%;
-}
-
-.zoomed{
-    transition-duration: 3s;
-    transform: scale(1.4); /* Zooms the div by 10% */
-    margin-top: 12%;
-}
 #submit-button,
-#fnbFirstDetailsSubmit{
+#submitButton{
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
@@ -117,135 +88,14 @@ input[type='password']{
     color: rgb(13, 166, 177);
     background-color: rgb(235, 187, 27);
 }
-#submit1:disabled, #submit3:disabled, #standardDetailsSubmit {
+#submitButton:disabled {
     background-color: #cccccc; /* Light gray background */
     cursor: not-allowed; /* Change cursor to indicate it's disabled */
-}
-#submit1{
-    background-color: black;
-    color: white;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    font-size: 120%;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-    border-radius: 100px;
-    padding: 4%;
-}
-#standardBankForm > div > input {
-    border: none;
-    border-bottom: 2px solid black;
-    border-radius: 0px;
-}
-#standardDetailsSubmit{
-    outline: none;
-    margin-bottom: 9%;
-    font-size: 120%;
-    padding: 5%;
-    width: 100%;
-    background-color: rgb(13, 166, 177);
-}
-#submit3, #nedbankFirstdetail{
-    background-color: rgb(65, 142, 48);
-    color: white;
-    font-size: 120%;
-    padding: 3%;
-    width: 100%;
-    border-radius: 15px;
-
-}
-#continue3 > input, #continue4 > input, #continue4 > div > input {
-    border: none;
-    border-bottom: 2px solid black;
-    border-radius: 0px;
-}
-.submit4, #next2 {
-    background-color: transparent;
-    color: #ccc;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    font-size: 120%;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 3%;
-    border-radius: 100px;
-    padding: 4%;
-    border: 2px solid grey;
-}
-
-
-
-
-#write{
-    padding: 2%;
-
-}
-#write-up {
-    text-align: center;
-    font-size: 120%;
-}
-#write-up div h3{
-    text-align: center;
-    color: red;
-    font-size: 90;
-}
-#failure{
-    text-align: center;
-    font-size: 205%;
-    color: red;
-}
-#why{
-    font-weight: bold;
-    color: white;
-    background-color: red;
-    padding: 1%;
-}
-
-#fail-write{
-    background-color: red;
-    font-size: 230%;
 }
 #successful{
     font-size: 100%;
     text-align: center;
     margin-top: 25%;
-  }
-
- 
-#p7{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 110%;
-    /* font-weight: bold; */
-    position: absolute;
-    top: 1%;
-    margin-left: 35%;
-}
-#done{
-    width:95%;
-    margin-top: 2%;
-    padding: 5%;
-    /* border: 3px solid black; */
-}
-#check{
-    /* background-color: rgb(29, 44, 156); */
-    color: rgba(29, 44, 156, 0.8);
-    font-size: 2000%;
-    padding:5% ;
-    width: 100% ;
-    margin-top: 200%;
-    visibility: hidden;
-    position: relative;
-    animation-duration: 3s;
-    animation-name: check;
-    
-    animation-direction: normal;
-}
-@keyframes check{
-    50%{
-        visibility:visible;
-        margin-top: -50%;
-    }
 }
 #with{
     text-align: center;
@@ -253,5 +103,5 @@ input[type='password']{
     position: static;
     top: 26%;
     left: 21%;
-    color: red;
+    color: green;
 }
